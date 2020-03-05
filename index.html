@@ -32,11 +32,7 @@
             from, to {border-color: transparent;}
             50% {border-color:black;}
         }
-		body {
-            background-color:rgb(76, 154, 232);
-            font-family:helvetica ;
 		
-	}
 	.head{
             text-align:center;
             margin:44px;
@@ -66,7 +62,12 @@
 			li a:hover:not(.active) {
 			  background-color: #111;
 			}
-	
+			#comment-table {
+			position:absolute;
+            left:300px;
+			background-color:white;
+		
+	}
 	
 	</style>
 </head>
@@ -75,7 +76,7 @@
 <br>
 <ul>
 <li><a href = ''>Childhood</a></li>
-<li> <a href = ''>Achievements </a></li>
+<li> <a href = 'Achievments.html'>Achievements </a></li>
 <li> <a href = ''>Political Career</a></li>
 <li> <a href = ''> Fun Facts</a></li>
 <li> <a href = ''>Quiz/Interactive Activities</a></li>
@@ -83,6 +84,179 @@
 </ul>
 <h1 class = 'head'> Wax Museum</h1>
 <p> At our school we are putting on a live wax museum where we choose a person, research them, and write a speech. My person is Winston Churchill and this is a website for my Wax Museum Project.</p>
+<h1 class = 'head' id = 'Comment'> Comments</h1>
+	<p> Who: <input id ='who-input'> </p>
 
+<p> What: <input id = 'what-input'> </p>
+
+
+
+
+
+<button type = 'submit' id = 'table-button'>Submit Comment</button>
+<table id = 'comment-table'>
+<thead>
+<tr>
+<th>From</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GREAT BRITAIN</td>
+<td> Winston Churchill is litterally the best.</td>
+</tr>
+<tr>
+<td>SmallBrain </td>
+<td>Neville Chamberlain is better. </td>
+</tr>
+<tr>
+<td>BigBrain </td>
+<td>Winston Churchill is infinitly better than Neville Chamberlain. </td>
+
+</tr>
+
+<tr>
+<td id = 'who-table1'> </td>
+<td id = 'what-table1'> </td>
+
+</tr>
+
+<tr>
+<td id = 'who-table2'> </td>
+<td id = 'what-table2'> </td>
+
+</tr>
+
+<tr>
+<td id = 'who-table3'> </td>
+<td id = 'what-table3'> </td>
+
+</tr>
+
+<tr>
+<td id = 'who-table4'> </td>
+<td id = 'what-table4'> </td>
+
+</tr>
+
+<tr>
+<td id = 'who-table5'> </td>
+<td id = 'what-table5'> </td>
+
+</tr>
+
+<tr>
+<td id = 'who-table6'> </td>
+<td id = 'what-table6'> </td>
+
+</tr>
+
+<tr>
+<td id = 'who-table7'> </td>
+<td id = 'what-table7'> </td>
+
+</tr>
+
+<tr>
+<td id = 'who-table8'> </td>
+<td id = 'what-table8'> </td>
+
+</tr>
+
+<tr>
+<td id = 'who-table9'> </td>
+<td id = 'what-table9'> </td>
+
+</tr>
+<tr>
+<td id = 'who-table10'> </td>
+<td id = 'what-table10'> </td>
+
+</tr>
+
+
+<tr>
+<td id = 'who-table11'> </td>
+<td id = 'what-table11'> </td>
+
+</tr>
+
+<tr>
+<td id = 'who-table12'> </td>
+<td id = 'what-table12'> </td>
+
+</tr>
+
+<tr>
+<td id = 'who-table13'> </td>
+<td id = 'what-table13'> </td>
+</tr>
+
+<tr>
+<td id = 'who-table14'> </td>
+<td id = 'what-table14'> </td>
+
+</tr>
+
+<tr>
+<td id = 'who-table15'> </td>
+<td id = 'what-table15'> </td>
+
+</tr>
+
+<tr>
+<td id = 'who-table16'> </td>
+<td id = 'what-table16'> </td>
+
+</tr>
+
+<tr>
+<td id = 'who-table17'> </td>
+<td id = 'what-table17'> </td>
+
+</tr>
+
+<tr>
+<td id = 'who-table18'> </td>
+<td id = 'what-table18'> </td>
+
+</tr><tr>
+<td id = 'who-table19'> </td>
+<td id = 'what-table19'> </td>
+</tr>
+
+<tr>
+<td id = 'who-table20'> </td>
+<td id = 'what-table20'> </td>
+
+</tr>
+</tbody>
+
+</table>
+	
+<!-- Java(jQuery) -->
+<script src = 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+
+
+<script> 
+var number = 1
+$('#table-button').on('click', function(event){
+	
+	var who  = $('#who-input')
+	var $who = who.val()
+	
+	var what = $('#what-input')
+	var $what = what.val()
+	
+	$('#who-table' + number).text($who)
+	$('#what-table' + number).text($what)
+		number += 1
+	
+	
+	
+	
+})
+</script>
 </body>
 </html>
