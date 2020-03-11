@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quiz/Interactive Activities</title>
+	<link rel = 'icon' href = 'https://upload.wikimedia.org/wikipedia/commons/9/97/Churchill_HU_90973.jpg' type = 'image/png'>
+	<style>
+	body {
+	background-color:rgb(76, 154, 232);
+            font-family:helvetica ;
+	}
+	.head{
+            text-align:center;
+            margin:44px;
+            background-color:white;
+            border:10px ridge rgb(74, 77, 79);
+			}
+	ul  {
+  			list-style-type: none;
+			  margin: 0;
+			  padding: 0;
+			  overflow: hidden;
+			  background-color: #333;
+			}
+
+			
+
+			li  a {
+			  display: block;
+			  color: white;
+			  text-align: center;
+			  padding: 14px 16px;
+			  text-decoration: none;
+			}
+
+			li a:hover:not(.active) {
+			  background-color: #111;
+			}
+			.place {
+        border: 2px ridge gold;
+        background-color: white;
+            
+        }
+			
+	</style>
+</head>
+<body>
+<ul>
+<li><a href = 'index.html'>Home</a></li>
+</ul>
+
+<h1 class = 'head'>Quiz/Interactive Activity</h1>
+<strong>
+<marquee>Yay! Quiz Time!</marquee>
+</strong>
+<!-- choose churchill -->
+<form id = 'pic-select'>
+<label>
+Favorite Churchill
+<select name = 'age'>
+<option value = 'child'>Churchill as a Child</option>
+<option value = 'war'>Churchill in Boer War</option>
+<option value = 'pm'>Churchill as Prime Minister</option>
+
+</select>
+
+</label>
+<button type = 'submit' id = 'fav-but'>Pick!</button>
+</form>
+<div id = 'placeforpic'>Picture:</div>
+
+<!-- quiz -->
+<form id = 'ques1'>
+<label>
+Where was Winston Churchill born(what place, not city)?
+<select id = 'born'>
+<option value = 'right'>Blenheim Palace</option>
+<option value = 'wrong1'>Buckingham Palace</option>
+<option value = 'wrong2'>Windsor Castle</option>
+
+</select>
+
+</label>
+
+<button id = 'ques-but1'>Submit</button>
+</form>
+<div id = 'ques1place' class = 'place'> </div>
+<!-- question 2-->
+<form id = 'ques2'>
+<label>
+Winston Churchill won the Nobel Prize in _________?
+<select id = 'prize'>
+<option value = 'wrong1'>Peace</option>
+<option value = 'right'>Literature</option>
+<option value = 'wrong2'>Art</option>
+
+</select>
+
+</label>
+<button id = 'ques-but2'>Submit</button>
+
+</form>
+<div id = 'ques2place' class = 'place'> </div>
+
+
+
+<!-- question 3-->
+
+<form id = 'ques3'>
+<label>
+Winston Churchill was Prime Minister _ times?
+<select id = 'times'>
+<option value = 'right'>3</option>
+<option value = 'wrong1'>2</option>
+<option value = 'wrong2'>0</option>
+
+</select>
+
+</label>
+<button id = 'ques-but3'>Submit</button>
+
+</form>
+<div id = 'ques3place' class = 'place'> </div>
+
+<!-- question 4-->
+<form id = 'ques4'>
+<label>
+Where was Winston Churchill laid for 3 days?
+<select id = 'bury'>
+<option value = 'wrong1'>Westminister Abbey</option>
+<option value = 'wrong2'>St. Paul's Cathedral</option>
+<option value = 'right'>Westminister Hall</option>
+
+</select>
+
+</label>
+<button id = 'ques-but4'>Submit</button>
+
+</form>
+<div id = 'ques4place' class = 'place'> </div>
+<script src = 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+<script>
+var winstonImages = {
+	'child': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Churchill_1881_ZZZ_7555D.jpg/170px-Churchill_1881_ZZZ_7555D.jpg',
+	'war': 'https://external-preview.redd.it/hmGoV4VwYvY186dA65_RQbRPRSaDuqlZ9rP-CupJzRE.jpg?auto=webp&s=3ac249a2257d623aad2c1869639363d65910f1cd',
+	'pm': 'https://ih1.redbubble.net/image.404716516.0013/flat,750x,075,f-pad,750x1000,f8f8f8.u1.jpg'	
+	
+}
+$('#pic-select').on('submit', function(event){
+	event.preventDefault()
+	var $picplace = $(this).find('[name=age]')
+    var picplace = $picplace.val();
+	var $img = $('<img>');
+   	$img.width(240)
+	$img.height(320)
+    $img.attr('src', winstonImages[picplace])
+    $img.appendTo('#placeforpic')
+})
+
+right = 0
+$('#ques1').on('submit', function(event){
+	event.preventDefault()
+	answer1 = $('#born')
+	$answer1 = answer1.val()
+	if ($answer1 === 'right') {
+		right += 1;
+		$('#ques1place').text("Correct!")
+	}
+	else {
+		$('#ques1place').text("Wrong, you might need to study some more.")
+	}
+	
+	
+})
+$('#ques2').on('submit', function(event){
+	event.preventDefault()
+	answer2 = $('#prize')
+	$answer2 = answer2.val()
+	if ($answer2 === 'right') {
+		right += 1;
+		$('#ques2place').text("Correct!")
+	}
+	else {
+		$('#ques2place').text("Wrong, you might need to study some more.")
+	}
+	
+	
+})
+
+$('#ques3').on('submit', function(event){
+	event.preventDefault()
+	answer3 = $('#times')
+	$answer3 = answer3.val()
+	if ($answer3 === 'right') {
+		right += 1;
+		$('#ques3place').text("Correct!")
+	}
+	else {
+		$('#ques3place').text("Wrong, you might need to study some more.")
+	}
+	
+	
+})
+
+$('#ques4').on('submit', function(event){
+	event.preventDefault()
+	answer4 = $('#bury')
+	$answer4 = answer4.val()
+	if ($answer4 === 'right') {
+		right += 1;
+		$('#ques4place').text("Correct! You got " + right + " questions correct.")
+	}
+	else {
+		$('#ques4place').text("Wrong, you might need to study some more. You got " + right + " questions correct.")
+	}
+	
+	
+})
+
+</script>
+</body>
+</html>
+
